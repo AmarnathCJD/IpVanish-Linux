@@ -1,19 +1,22 @@
 <h1>IPVanish-Linux</h1>
 <p>A Web-GUI for OpenVPN with IpVanish on Linux.</p>
 
-<h2>Description</h2>
+<h2>description</h2>
 <p>This project is a simple web interface for OpenVPN with IpVanish on Linux. Using the CLI is a bit cumbersome, and this project aims to make it easier to connect to IpVanish servers.</p>
 
-<h2>Features</h2>
+<h3>features</h3>
     <ul>
-        <li>🌐 Connect to IpVanish servers</li>
-        <li>🔒 Authenticate using Username and Password</li>
-        <li>🗺️ Country, City, and Server selection</li>
-        <li>📊 Real-time connection status and network information</li>
-        <li>🐍 Pure Python implementation + OpenVPN</li>
+        <li>🌐 connect to IpVanish servers</li>
+        <li>🔒 authenticate using Username and Password</li>
+        <li>🗺️ country, City, and Server selection</li>
+        <li>📊 real-time connection status and network information</li>
+        <li>🐍 pure Python implementation + OpenVPN</li>
     </ul>
 
-<h2>Installation</h2>
+<h3>demo screenshot</h3>
+<img src='https://envs.sh/iYp.png'>
+
+<h3>installation</h3>
 
 ```bash
 sudo apt-get install openvpn
@@ -24,7 +27,7 @@ pip3 install -r requirements.txt
 python3 main.py
 ```
 
-<h2>Environment Variables</h2>
+<h3>environment variables</h3>
     <table>
         <thead>
             <tr>
@@ -35,20 +38,22 @@ python3 main.py
         <tbody>
             <tr>
                 <td><code>USERNAME</code></td>
-                <td>IpVanish Username</td>
+                <td>IPVanish Username</td>
             </tr>
             <tr>
                 <td><code>PASSWORD</code></td>
-                <td>IpVanish Password</td>
+                <td>IPVanish Password</td>
+            </tr>
+            <tr>
+                <td><code>INTERFACE_NAME</code></td>
+                <td>Name of Network device (for speed measure)</td>
             </tr>
         </tbody>
     </table>
 
-<h2>Development</h2>
-<p>Want to contribute? Great! 🎉</p>
-
-<h2>Disclaimer</h2>
+<h3>Disclaimer</h3>
 <p>This project is not affiliated with IpVanish in any way. Use at your own risk. ⚠️</p>
 
 <h2>License</h2>
-<p>This project is licensed under the MIT License - see the LICENSE file for details. 📄</p>
+<p>want to contribute? Great! 🎉
+this project is licensed under the MIT License - see the LICENSE file for details. 📄</p>
