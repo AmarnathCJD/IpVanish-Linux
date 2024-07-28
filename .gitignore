@@ -1,0 +1,5 @@
+.env
+*.txt
+__pycache__
+*.pyc
+auth.txt

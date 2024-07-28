@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPVanish VPN</title>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet">
+    <style>
+        .loader-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: -moz-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%);
+            background: -webkit-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            z-index: 9999;
+        }
+
+        .loader {
+            height: 300px;
+            aspect-ratio: 1;
+            position: relative;
+        }
+
+        .loader .box {
+            position: absolute;
+            background: rgba(100, 100, 100, 0.15);
+            background: linear-gradient(0deg, rgba(50, 50, 50, 0.2) 0%, rgba(100, 100, 100, 0.2) 100%);
+            border-radius: 50%;
+            border-top: 1px solid #646464;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 10px 0px;
+            backdrop-filter: blur(5px);
+            animation: ripple 2s infinite ease-in-out;
+        }
+
+        .loader .box:nth-child(1) {
+            inset: 40%;
+            z-index: 99;
+        }
+
+        .loader .box:nth-child(2) {
+            inset: 30%;
+            z-index: 98;
+            border-color: rgba(100, 100, 100, 0.8);
+            animation-delay: 0.2s;
+        }
+
+        .loader .box:nth-child(3) {
+            inset: 20%;
+            z-index: 97;
+            border-color: rgba(100, 100, 100, 0.6);
+            animation-delay: 0.4s;
+        }
+
+        .loader .box:nth-child(4) {
+            inset: 10%;
+            z-index: 96;
+            border-color: rgba(100, 100, 100, 0.4);
+            animation-delay: 0.6s;
+        }
+
+        .loader .box:nth-child(5) {
+            inset: 0%;
+            z-index: 95;
+            border-color: rgba(100, 100, 100, 0.2);
+            animation-delay: 0.8s;
+        }
+
+        .loader .logo {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-content: center;
+            padding: 30%;
+        }
+
+        .loader .logo svg {
+            fill: grey;
+            width: 100%;
+            animation: color-change 2s infinite ease-in-out;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(1);
+                box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 10px 0px;
+            }
+
+            50% {
+                transform: scale(1.3);
+                box-shadow: rgba(0, 0, 0, 0.3) 0px 30px 20px 0px;
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 10px 0px;
+            }
+        }
+
+        @keyframes color-change {
+            0% {
+                fill: grey;
+            }
+
+            50% {
+                fill: white;
+            }
+
+            100% {
+                fill: grey;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900">
+    <div class="flex flex-col loader-container" id="loader-container">
+        <h1 class="text-4xl font-bold mb-8 gradient-text-a">IPVanish VPN</h1>
+        <div class="loader flex items-center justify-center absolute">
+            <div class="box">
+                <div class="logo">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" class="text-green-500"
+                        viewBox="0 0 226.777 226.777" enable-background="new 0 0 226.777 226.777" xml:space="preserve">
+                        <g id="VPN_alt">
+                            <polygon fill="#231F20" points="0.164,103.869 43.583,103.869 90.828,151.114 90.828,103.869 124.801,103.869 124.801,198.815 
+		92.404,198.815 	" />
+                            <path fill="#231F20"
+                                d="M137.682,60.731v24.127c0,0,31.33,0,43.986,0c12.432,0,16.704,7.42,16.704,14.68
+		c0,7.259-4.948,14.848-17.661,14.848c-10.463,0-43.029,0-43.029,0v30.036c0,0,35.099,0,52.141,0
+		c19.798,0,36.954-13.499,36.954-44.377c0-30.882-23.232-39.315-36.954-39.315C179.868,60.731,137.682,60.731,137.682,60.731z" />
+                            <path fill="#70bb43" d="M172.65,172.996c11.151,4.055,17.849,9.242,17.849,14.902c0,12.987-35.257,23.511-78.745,23.511
+		c-43.49,0-78.744-10.523-78.744-23.511c0-5.66,6.697-10.848,17.845-14.902c-19.872,5.32-32.47,13.197-32.47,21.99
+		c0,16.028,41.802,29.022,93.369,29.022s93.37-12.994,93.37-29.022C205.124,186.193,192.523,178.316,172.65,172.996z" />
+                            <path fill="#70bb43" d="M85.093,80.793c0,0.848-0.685,1.533-1.529,1.533H64.014c-0.847,0-1.532-0.686-1.532-1.533V61.248
+		c0-0.845,0.685-1.532,1.532-1.532h19.549c0.844,0,1.529,0.688,1.529,1.532V80.793z" />
+                            <path fill="#70bb43" d="M124.69,90.229c0,1.227-0.991,2.222-2.214,2.222H94.173c-1.227,0-2.218-0.995-2.218-2.222V61.932
+		c0-1.225,0.991-2.216,2.218-2.216h28.303c1.223,0,2.214,0.991,2.214,2.216V90.229z" />
+                            <path fill="#70bb43" d="M112.796,51.131c0,0.78-0.634,1.415-1.412,1.415H93.366c-0.779,0-1.411-0.635-1.411-1.415V33.115
+		c0-0.779,0.632-1.41,1.411-1.41h18.018c0.778,0,1.412,0.631,1.412,1.41V51.131z" />
+                            <path fill="#70bb43" d="M83.321,51.131c0,0.78-0.632,1.415-1.409,1.415H63.893c-0.778,0-1.411-0.635-1.411-1.415V33.115
+		c0-0.779,0.633-1.41,1.411-1.41h18.019c0.777,0,1.409,0.631,1.409,1.41V51.131z" />
+                            <path fill="#70bb43" d="M78.26,26.586c0,0.591-0.48,1.068-1.068,1.068H63.551c-0.589,0-1.068-0.477-1.068-1.068V12.948
+		c0-0.592,0.479-1.069,1.068-1.069h13.641c0.588,0,1.068,0.478,1.068,1.069V26.586z" />
+                            <path fill="#70bb43" d="M57.027,47.121c0,0.62-0.502,1.122-1.122,1.122H41.611c-0.62,0-1.12-0.502-1.12-1.122V32.823
+		c0-0.615,0.5-1.117,1.12-1.117h14.294c0.62,0,1.122,0.502,1.122,1.117V47.121z" />
+                            <path fill="#231F20" d="M51.289,24.73c0,0.406-0.326,0.734-0.729,0.734h-9.339c-0.404,0-0.73-0.329-0.73-0.734v-9.336
+		c0-0.404,0.326-0.731,0.73-0.731h9.339c0.403,0,0.729,0.327,0.729,0.731V24.73z" />
+                            <path fill="#231F20" d="M35.766,12.834c0,0.406-0.326,0.732-0.73,0.732h-9.339c-0.404,0-0.73-0.326-0.73-0.732V3.498
+		c0-0.404,0.326-0.73,0.73-0.73h9.339c0.404,0,0.73,0.326,0.73,0.73V12.834z" />
+                        </g>
+                    </svg>
+                </div>
+            </div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+    </div>
+    <nav class="flex items-center justify-between p-4 bg-gray-800">
+        <a href="/" class="text-lg font-extrabold text-text-accent">IPVanish VPN - Linux (<span
+                class='text-text-accent text-sm'>@amarnathcjd</span>)</a>
+        <div class="flex items-center">
+            <button
+                class="p-4 flex flex-col items-center space-x-4 hover:bg-button-accent-light hover:text-text-accent text-white"
+                onclick="window.location.href = '/logout'">Turn Off</button>
+        </div>
+    </nav>
+
+    <main class="flex items-start justify-center mt-8">
+        <div class="w-1/2 text-start">
+            <h1 class="text-4xl font-bold mb-4 gradient-text-a">IPVanish VPN</h1>
+            <p class="text-lg mb-8 text-gray-300">Connect to the VPN to secure your connection</p>
+            <button id="connect" onclick="connectClick()"
+                class="py-2 px-6 bg-button-accent font-mono font-bold text-white rounded-md animate-pulse hover:bg-button-accent-dark">
+                <div class='flex items-center justify-center space-x-1 px-2'><span id='conn' class="mt-1">Connect</span><span
+                        class="space-x-2"></span><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" class="text-green-500"
+                        viewBox="0 0 226.777 226.777" enable-background="new 0 0 226.777 226.777" xml:space="preserve">
+                        <g id="VPN_alt">
+                            <polygon fill="#231F20" points="0.164,103.869 43.583,103.869 90.828,151.114 90.828,103.869 124.801,103.869 124.801,198.815 
+		92.404,198.815 	" />
+                            <path fill="#231F20"
+                                d="M137.682,60.731v24.127c0,0,31.33,0,43.986,0c12.432,0,16.704,7.42,16.704,14.68
+		c0,7.259-4.948,14.848-17.661,14.848c-10.463,0-43.029,0-43.029,0v30.036c0,0,35.099,0,52.141,0
+		c19.798,0,36.954-13.499,36.954-44.377c0-30.882-23.232-39.315-36.954-39.315C179.868,60.731,137.682,60.731,137.682,60.731z" />
+                            <path fill="#70bb43" d="M172.65,172.996c11.151,4.055,17.849,9.242,17.849,14.902c0,12.987-35.257,23.511-78.745,23.511
+		c-43.49,0-78.744-10.523-78.744-23.511c0-5.66,6.697-10.848,17.845-14.902c-19.872,5.32-32.47,13.197-32.47,21.99
+		c0,16.028,41.802,29.022,93.369,29.022s93.37-12.994,93.37-29.022C205.124,186.193,192.523,178.316,172.65,172.996z" />
+                            <path fill="#70bb43" d="M85.093,80.793c0,0.848-0.685,1.533-1.529,1.533H64.014c-0.847,0-1.532-0.686-1.532-1.533V61.248
+		c0-0.845,0.685-1.532,1.532-1.532h19.549c0.844,0,1.529,0.688,1.529,1.532V80.793z" />
+                            <path fill="#70bb43" d="M124.69,90.229c0,1.227-0.991,2.222-2.214,2.222H94.173c-1.227,0-2.218-0.995-2.218-2.222V61.932
+		c0-1.225,0.991-2.216,2.218-2.216h28.303c1.223,0,2.214,0.991,2.214,2.216V90.229z" />
+                            <path fill="#70bb43" d="M112.796,51.131c0,0.78-0.634,1.415-1.412,1.415H93.366c-0.779,0-1.411-0.635-1.411-1.415V33.115
+		c0-0.779,0.632-1.41,1.411-1.41h18.018c0.778,0,1.412,0.631,1.412,1.41V51.131z" />
+                            <path fill="#70bb43" d="M83.321,51.131c0,0.78-0.632,1.415-1.409,1.415H63.893c-0.778,0-1.411-0.635-1.411-1.415V33.115
+		c0-0.779,0.633-1.41,1.411-1.41h18.019c0.777,0,1.409,0.631,1.409,1.41V51.131z" />
+                            <path fill="#70bb43" d="M78.26,26.586c0,0.591-0.48,1.068-1.068,1.068H63.551c-0.589,0-1.068-0.477-1.068-1.068V12.948
+		c0-0.592,0.479-1.069,1.068-1.069h13.641c0.588,0,1.068,0.478,1.068,1.069V26.586z" />
+                            <path fill="#70bb43" d="M57.027,47.121c0,0.62-0.502,1.122-1.122,1.122H41.611c-0.62,0-1.12-0.502-1.12-1.122V32.823
+		c0-0.615,0.5-1.117,1.12-1.117h14.294c0.62,0,1.122,0.502,1.122,1.117V47.121z" />
+                            <path fill="#231F20" d="M51.289,24.73c0,0.406-0.326,0.734-0.729,0.734h-9.339c-0.404,0-0.73-0.329-0.73-0.734v-9.336
+		c0-0.404,0.326-0.731,0.73-0.731h9.339c0.403,0,0.729,0.327,0.729,0.731V24.73z" />
+                            <path fill="#231F20" d="M35.766,12.834c0,0.406-0.326,0.732-0.73,0.732h-9.339c-0.404,0-0.73-0.326-0.73-0.732V3.498
+		c0-0.404,0.326-0.73,0.73-0.73h9.339c0.404,0,0.73,0.326,0.73,0.73V12.834z" />
+                        </g>
+                    </svg>
+                </div>
+            </button>
+            <div class="mt-4" name="network-speed">
+                <p class="text-sm text-text-accent font-bold" id="network-speed"></p>
+            </div>
+            <div class="mt-2 mb-4">
+                <p class="text-sm text-text-accent font-bold">Your IP Address: <span class="font-bold">
+                        <span id="ip-address" class="text-blue-600 font-bold"></span>
+                    </span></p>
+
+                <pre name="ip-details-json" id="ip-details-json" class="text-sm text-blue-400 font-bold">
+                </pre>
+            </div>
+
+            <span class="text-lg font-bold text-text-accent mt-8">Search for a Location</span>
+            <div class="mt-8">
+                <input type="text" id="search"
+                    class="w-1/2 bg-gray-800 border border-gray-600 hover:border-accent px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline text-white"
+                    placeholder="Search for a Location">
+
+                <div class="mt-4">
+                    <button class="p-2 px-6 bg-indigo-500 ont-mono font-bold text-white rounded-md" onclick="search()"
+                        id="search-button">
+                        <div class='flex items-center justify-center space-x-1 px-2'><span id='conn'>Search</span><span
+                                class="space-x-2"></span>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="flex flex-col hidden w-1/2 mt-4 h-64 overflow-y-auto" id="results"></div>
+
+            </div>
+        </div>
+        <div class="">
+            <div class="mb-8">
+                <iframe id="vpn-map" src="" class="w-96 h-60 border-gray-500 border-2 rounded-md hidden"></iframe>
+            </div>
+            <div class="mt-8">
+                <label for="country" class="block text-lg font-bold text-text-accent">Select Country</label>
+                <div class="relative">
+                    <select id="country-select"
+                        class="block appearance-none w-full bg-gray-800 border border-gray-600 hover:border-accent px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M9 11l4-4-4-4v8z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <label for="city" class="block text-lg font-bold text-text-accent">Select City</label>
+                <div class="relative">
+                    <select id="city-select"
+                        class="block appearance-none w-full bg-gray-800 border border-gray-600 hover:border-accent px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M9 11l4-4-4-4v8z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <label for="server" class="block text-lg font-bold text-text-accent">Select Server</label>
+                <div class="relative">
+                    <select id="server-select"
+                        class="block appearance-none w-full bg-gray-800 border border-gray-600 hover:border-accent px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M9 11l4-4-4-4v8z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        :root {
+            --accent: rgb(18, 41, 50);
+            --button-accent: rgb(99, 212, 113);
+            --button-accent-dark: rgb(85, 180, 90);
+            --text-accent: rgb(93, 170, 41);
+        }
+
+        .h-60 {
+            height: 15rem;
+        }
+
+        .text-text-accent {
+            color: var(--text-accent);
+        }
+
+        .gradient-text-a {
+            background: linear-gradient(30deg, #ff0000 0, #f0f0f0 30%, #008000 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .bg-accent {
+            background-color: var(--accent);
+        }
+
+        .hover:bg-button-accent-dark:hover {
+            background-color: var(--button-accent-dark);
+        }
+
+        .bg-button-accent {
+            background-color: var(--button-accent);
+        }
+
+        .hover:bg-button-accent-light:hover {
+            background-color: rgba(99, 212, 113, 0.8);
+        }
+
+        #country-select,
+        #city-select,
+        #server-select {
+            color: white;
+        }
+
+        .border-accent {
+            border-color: var(--accent);
+        }
+
+        body {
+            background: -moz-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%);
+            background: -webkit-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+
+    <script>
+        const countrySelect = document.getElementById('country-select');
+        const citySelect = document.getElementById('city-select');
+        const serverSelect = document.getElementById('server-select');
+        const ipAddress = document.getElementById('ip-address');
+
+        var lastCountry = 'US';
+        var lastCity = 'New York';
+
+        var countries = [];
+
+
+        function setupCountries() {
+            serverSelect.innerHTML = '';
+            fetch('/countries')
+                .then(response => response.json())
+                .then(data => {
+                    data.sort()
+                    data.forEach(country => {
+                        const option = document.createElement('option');
+                        option.textContent = country.name + ' ' + country.flag;
+                        option.classList.add('text-white');
+                        if (country.name === 'United States') {
+                            option.selected = true;
+                        }
+                        countrySelect.appendChild(option);
+                        countries.push(country);
+                    });
+                });
+        }
+
+        function setupCities(countryCode, goOption) {
+            serverSelect.innerHTML = '';
+            fetch(`/cities?country=${countryCode}`)
+                .then(response => response.json())
+                .then(data => {
+                    citySelect.innerHTML = '';
+                    data.sort();
+                    data.forEach(city => {
+                        const option = document.createElement('option');
+                        option.textContent = city;
+                        option.classList.add('text-white');
+                        option.selected = goOption && city === lastCity;
+                        citySelect.appendChild(option);
+                    });
+                    if (!goOption) {
+                        lastCity = data[0];
+                    }
+                    setupServers(lastCity);
+                    setupMap(lastCity);
+                });
+        }
+
+        function setupServers(city) {
+            serverSelect.innerHTML = '';
+            fetch(`/servers?city=${city}&country=${lastCountry}`)
+                .then(response => response.json())
+                .then(data => {
+                    data.sort();
+                    data.forEach(server => {
+                        const option = document.createElement('option');
+                        option.textContent = server;
+                        option.classList.add('text-white');
+                        serverSelect.appendChild(option);
+                    });
+                });
+        }
+
+        countrySelect.addEventListener('change', (event) => {
+            citySelect.innerHTML = '';
+            serverSelect.innerHTML = '';
+
+            const val = event.target.value.split(' ').slice(0, -1).join(' ');
+            console.log(val);
+            var countryCode = '';
+            for (var i = 0; i < countries.length; i++) {
+                if (countries[i].name === val) {
+                    countryCode = countries[i].code;
+                    break;
+                }
+            }
+
+            if (!countryCode) {
+                lastCountry = 'US';
+                countryCode = 'US';
+            }
+
+            lastCountry = countryCode;
+            setupMap(val);
+            setupCities(countryCode, false);
+        });
+
+        citySelect.addEventListener('change', (event) => {
+            serverSelect.innerHTML = '';
+            setupServers(event.target.value);
+            setupMap(event.target.value);
+        });
+
+        setupCountries();
+        setupCities(lastCountry, false);
+        setupServers(lastCity);
+
+        function ip() {
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    ipAddress.textContent = data.ip;
+
+                    fetch(`/ip`)
+                        .then(response => response.json())
+                        .then(data => {
+                            document.getElementById('ip-details-json').textContent = JSON.stringify(data, null, 2).replace("{", "").replace("}", "");
+                        });
+                });
+        }
+
+        function connectClick() {
+            if (document.getElementById('conn').innerHTML === 'Connect') {
+                connect();
+            } else {
+                disconnect();
+            }
+        }
+
+        function connect() {
+            const server = serverSelect.value;
+            fetch(`/connect?server=${server}&city=${citySelect.value}&country=${lastCountry}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('conn').textContent = 'Disconnect';
+                    document.getElementById('ip-address').textContent = 'Connecting...';
+                    document.getElementById('connect').classList.remove('bg-green-500');
+                    document.getElementById('connect').classList.add('bg-red-500');
+                    setInterval(ip, 3000);
+                });
+        }
+
+        function disconnect() {
+            fetch('/disconnect')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('conn').textContent = 'Connect';
+                    document.getElementById('connect').classList.remove('bg-red-500');
+                    document.getElementById('connect').classList.add('bg-green-500');
+                });
+        }
+
+        function setupMap(city) {
+            document.getElementById('vpn-map').classList.add('hidden');
+            if (!city) {
+                document.getElementById('vpn-map').src = `/map`
+            } else {
+                document.getElementById('vpn-map').src = `/map_city?city=${city}`;
+            }
+
+            setTimeout(() => {
+                document.getElementById('vpn-map').classList.remove('hidden');
+            }, 100);
+        }
+
+        function disappearLoading() {
+            setTimeout(() => {
+                document.getElementById('loader-container').style.opacity = 0;
+                document.getElementById('loader-container').style.display = 'none';
+            }, 1000);
+        }
+
+        var eventSource = new EventSource("/speed");
+        eventSource.onmessage = function (event) {
+            const data = event.data;
+            document.getElementById('network-speed').innerHTML = data;
+        };
+
+        disappearLoading();
+        setupMap();
+        ip();
+
+        function search() {
+            const search = document.getElementById('search').value;
+            fetch(`/search?city=${search}`)
+                .then(response => response.json())
+                .then(data => {
+                    const results = document.getElementById('results');
+                    results.innerHTML = '';
+                    data.forEach(result => {
+                        html = `<button id="result-${result.city}" onclick="handleResultClick('${result.city}', '${result.country}', '${result.iso_name}', '${result.flag}')" class="w-full"
+                        ><div class="px-4 py-1 bg-gray-800 mt-2 rounded-lg border-1 border-green-500">
+                            <div class="flex items-center justify-between">
+                                <span class="text-text-accent font-bold">${result.city}, ${result.iso_name}</span>
+                                <span>${result.flag}</span>
+                            </div>
+                        </div></button>`;
+                        results.insertAdjacentHTML('beforeend', html);
+                    });
+
+                    results.classList.remove('hidden');
+                });
+        }
+
+        function handleResultClick(city, country, iso, flag) {
+            countrySelect.value = iso + ' ' + flag;
+            lastCountry = country;
+            lastCity = city;
+            setupCities(country, true);
+
+            citySelect.value = city;
+        }
+
+        var typingTimer;
+
+        document.getElementById('search').addEventListener('keyup', (event) => {
+            const searchVal = document.getElementById('search').value;
+            if (searchVal.length === 0) {
+                document.getElementById('results').classList.add('hidden');
+                clearTimeout(typingTimer)
+            } else if (event.key === 'Enter') {
+                search();
+            } else {
+                clearTimeout(typingTimer);
+                typingTimer = setTimeout(search, 400);
+            }
+        });
+    </script>
+</body>
+
+</html>
